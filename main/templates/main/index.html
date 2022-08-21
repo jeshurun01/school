@@ -1,9 +1,11 @@
-{% load static %}
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %}
 
 {% block title %}Main Page{% endblock title %}
+
 <!-- connecting to main css files -->
-<link rel="stylesheet" href="{% static 'main/css/main_style.css' %}">
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'main/css/main_style.css' %}">
+{% endblock extrastyle %}
 
 {% block content %}
 <h1>Main Page</h1>
