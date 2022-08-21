@@ -9,3 +9,6 @@ A web based project
   * the entry point of all apps
 
 Je viens d'ajouter les templates pour me permetre de visualiser deja dans le web
+
+## TODO
+* [ - ] to be continue. je doits ajouter d'aures applications comme les eleves, les cours et aussi faire des analyses

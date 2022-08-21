@@ -5,8 +5,8 @@ from django.db import models
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to="profiles")
+    avatar = models.ImageField(upload_to="media/profiles", default="media/profiles/nofile.png")
     biography = models.TextField(default="No Bio")
 
     def __str__(self):
-        return f"Profile of {self.user.name}"
+        return f"Profile of {self.user.username}"
