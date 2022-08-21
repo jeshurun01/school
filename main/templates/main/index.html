@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Main Page{% endblock title %}
+
+{% block content %}
+<h1>Main Page</h1>
+<p>Here is where we start</p>
+<hr>
+<h2>TODO app</h2>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">{{ text }}</p>
+      <a href="#" class="btn btn-primary">valider</a>
+    </div>
+  </div>
+{% endblock content %}
