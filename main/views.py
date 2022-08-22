@@ -4,7 +4,7 @@ from user_profile.models import Profile
 
 # Create your views here.
 def index(request):
-    profile = Profile.objects.get(pk=2)
+    profile = Profile.objects.get(pk=1)
     context = {
         'title': 'Structurer le project',
         'text': 'Etablir toute la structure de notre projet. Je dois faire un croquis à main lever',
