@@ -32,10 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Personal app
-    "main.apps.MainConfig",
-    "todo.apps.TodoConfig",
-    "user_profile.apps.UserProfileConfig",
-
+    "main",
+    "todo",
+    "profiles",
+    # "user_profile.apps.UserProfileConfig",
 
     # Django apps
     "django.contrib.admin",
