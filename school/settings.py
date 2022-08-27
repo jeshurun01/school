@@ -31,11 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Personal app
     "main",
     "todo",
     "profiles",
-    # "user_profile.apps.UserProfileConfig",
 
     # Django apps
     "django.contrib.admin",
@@ -44,6 +42,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # bootstrap
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -116,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-fr"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Africa/Cairo"
 
 USE_I18N = True
 
@@ -141,3 +143,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# login settings
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "login"

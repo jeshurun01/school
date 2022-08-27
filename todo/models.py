@@ -9,7 +9,8 @@ from profiles.models import Profile
 class Task(models.Model):
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     title = models.CharField(max_length=120)
-    description = models.TextField()
+    description = models.TextField(default='...')
+    task_done = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 

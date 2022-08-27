@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Add Task
+{% endblock title %}
+
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p|safe }}
+    <input type="submit" value="submit">
+
+</form>
+{% endblock content %}

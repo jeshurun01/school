@@ -1,14 +1,20 @@
 from django.shortcuts import render
+from django.contrib.auth import authenticate, update_session_auth_hash
 from profiles.models import Profile
+from todo.models import Task
 
 
 # Create your views here.
 def index(request):
-    profile = Profile.objects.all()
-    print(len(profile))
-    context = {
-        'title': 'Structurer le project',
-        'text': 'Etablir toute la structure de notre projet. Je dois faire un croquis à main lever',
-        'profile': profile[1] if profile else "None",
-    }
+
+    user = request.user.id
+    if user is not None:
+        profile = Profile.objects.get(user=request.user)
+        tasks = Task.objects.filter(author=profile)
+        context = {
+            'tasks': tasks[::-1],
+            'profile': profile,
+        }
+    else:
+        context = {}
     return render(request, 'main/index.html', context)
