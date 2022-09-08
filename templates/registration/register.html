@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Register
+Edite Profil
 {% endblock title %}
 
 {% block content %}
+{% load crispy_forms_tags %}
+
 <form method="post">
     {% csrf_token %}
-    {{ form|safe }}
+    {{ form|crispy }}
 
     <input type="submit" value="submit">
 </form>

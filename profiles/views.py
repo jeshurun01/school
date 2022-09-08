@@ -1,18 +1,43 @@
 from django.shortcuts import render, redirect
 
-from profiles.forms import NewUserForm
+from .forms import NewUserForm, EditProfileForm
+from .models import Profile
 
 
-def signup(request):
+def sign_up(request):
     form = NewUserForm()
     if request.method == 'POST':
         form = NewUserForm(request.POST)
         if form.is_valid():
-
-            print(form.cleaned_data)
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
             return redirect('login')
 
     context = {
         'form': form
     }
-    return render(request, 'registration/register.html', context)
+    return render(request, 'registration/sign_up.html', context)
+
+
+def edit_profile(request):
+    form = EditProfileForm()
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profiles:profile')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'profiles/edit_profile.html', context)
+
+
+def profile_page(request):
+    profile = Profile.objects.get(user=request.user)
+    context = {
+        'profile': profile
+    }
+    return render(request, 'profiles/profile.html', context)

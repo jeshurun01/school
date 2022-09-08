@@ -9,8 +9,8 @@
       -->
       <span class="btn btn-link nav-link">
         {% if user.is_authenticated %}
-        <em>{{ user.username }}</em> |
-          <a href="{% url 'logout' %}">logout</a>
+        <a href="{% url 'profiles:profile' %}"><em>{{ user.username }}</em></a> |
+        <a href="{% url 'logout' %}">logout</a>
         {% else %}
         <a href="{% url 'login' %}">login</a>
         {% endif %}
