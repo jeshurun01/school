@@ -9,13 +9,20 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  <img id="profile-img" src="{{ profile.avatar }}" alt="{{ profile.user.username }}">
+  <img id="profile-img" src="{{ profile.avatar.url }}" alt="{{ profile.user.username }}">
   <span>@{{ profile.user.username  }}</span>
   <h1>Main Page</h1>
   <p>Here is where we start</p>
   <hr>
-    {% include 'todo/todos.html' %}
 
+<div class="row">
+  <div class="col-8">
+<!--  Ajouter une seection ici -->
+  </div>
+  <div class="col-4">
+        {% include 'todo/todos.html' %}
+  </div>
+</div>
 
 {% else %}
   <p>Vous n'etes pas connecté</p>

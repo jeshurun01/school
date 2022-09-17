@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "main",
     "todo",
     "profiles",
+    "student",
 
     # Django apps
     "django.contrib.admin",
@@ -148,7 +149,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -156,5 +157,6 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # login settings
+LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "login"

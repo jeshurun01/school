@@ -7,7 +7,7 @@ from .models import Profile
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'biography', 'created', 'updated')
     fieldsets = [
-        (None, {'fields': ['user']}),
+        (None, {'fields': ['user', 'avatar']}),
         ('Biographie', {'fields': ['biography']})
     ]
 

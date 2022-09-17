@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <img id="profile-img" src="{{ profile.avatar }}" alt="{{ profile.user.username }}" />
+  <img id="profile-img" src="{{ profile.avatar.url }}" alt="{{ profile.user.username }}" />
     <a href="{% url 'profiles:edit' %}">Modifier</a>
 </div>
 {% endblock content %}

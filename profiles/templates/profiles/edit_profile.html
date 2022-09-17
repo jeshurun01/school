@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 <div class="col-4">
-    <form method="post">
+    <form method="put">
         {% csrf_token %}
         {{ form|crispy }}
         <button class="btn btn-success mt-3">Edit</button>

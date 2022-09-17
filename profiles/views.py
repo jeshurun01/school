@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .forms import NewUserForm, EditProfileForm
@@ -20,10 +21,11 @@ def sign_up(request):
     return render(request, 'registration/sign_up.html', context)
 
 
+@login_required
 def edit_profile(request):
     form = EditProfileForm()
-    if request.method == 'POST':
-        form = EditProfileForm(request.POST)
+    if request.method == 'PUT':
+        form = EditProfileForm(request.PUT)
         if form.is_valid():
             form.save()
             return redirect('profiles:profile')
@@ -35,6 +37,7 @@ def edit_profile(request):
     return render(request, 'profiles/edit_profile.html', context)
 
 
+@login_required
 def profile_page(request):
     profile = Profile.objects.get(user=request.user)
     context = {
